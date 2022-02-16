@@ -37,7 +37,7 @@ class FirstViewController: BaseViewController {
         }
         
         btPerformSegueB.addAction(for: .touchUpInside) { _ in
-            self.sendDataAndPerformSegue(withIdentifier: self.THIRD_SEGUE, requestCode: self.REQUEST_THIRD_SEGUE)
+            self.sendDataAndPerformSegue(withIdentifier: self.THIRD_SEGUE, requestCode: self.REQUEST_THIRD_VIEW_CONTROLLER)
         }
     }
 
