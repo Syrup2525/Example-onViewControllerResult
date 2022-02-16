@@ -64,11 +64,11 @@ extension FirstViewController: OnViewControllerResult {
         
         switch requestCode {
         case REQUEST_SECOND_VIEW_CONTROLLER:
-            lbRequestView.text = "REQUEST_SECOND_VIEW_CONTROLLER"
+            lbRequestView.text = "Result SECOND_VIEW"
             break
             
         case REQUEST_THIRD_VIEW_CONTROLLER:
-            lbRequestView.text = "REQUEST_THIRD_VIEW_CONTROLLER"
+            lbRequestView.text = "Result THIRD_VIEW"
             break
             
         default:
