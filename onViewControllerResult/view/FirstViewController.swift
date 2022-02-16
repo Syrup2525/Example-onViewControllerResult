@@ -18,7 +18,7 @@ class FirstViewController: BaseViewController {
     @IBOutlet var btPerformSegueB: UIButton!
     
     private let REQUEST_SECOND_VIEW_CONTROLLER = 10000
-    private let REQUEST_THIRD_SEGUE = 10001
+    private let REQUEST_THIRD_VIEW_CONTROLLER = 10001
     
     private let SECOND_SEGUE = "SecondSegue"
     private let THIRD_SEGUE = "ThirdSegue"
@@ -67,8 +67,8 @@ extension FirstViewController: OnViewControllerResult {
             lbRequestView.text = "REQUEST_SECOND_VIEW_CONTROLLER"
             break
             
-        case REQUEST_THIRD_SEGUE:
-            lbRequestView.text = "REQUEST_THIRD_SEGUE"
+        case REQUEST_THIRD_VIEW_CONTROLLER:
+            lbRequestView.text = "REQUEST_THIRD_VIEW_CONTROLLER"
             break
             
         default:
