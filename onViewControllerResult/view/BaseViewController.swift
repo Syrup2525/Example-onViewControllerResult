@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    final override func viewWillAppear(_ animated: Bool) {
         presentingViewControllerData = presentingViewController
         
         super.viewWillAppear(animated)
