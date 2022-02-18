@@ -40,7 +40,7 @@ class FirstViewController: BaseViewController {
             self.sendDataAndPerformSegue(withIdentifier: self.THIRD_SEGUE, requestCode: self.REQUEST_THIRD_VIEW_CONTROLLER)
         }
     }
-
+    
     private func sendDataAndPerformSegue(withIdentifier: String, requestCode: Int) {
         var exampleObject = ExampleObject()
         exampleObject.a = self.tfDataA.text

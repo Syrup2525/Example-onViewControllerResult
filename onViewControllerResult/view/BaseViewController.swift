@@ -19,10 +19,14 @@ class BaseViewController: UIViewController {
     }
     
     final override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         presentingViewControllerData = presentingViewController
         
-        super.viewWillAppear(animated)
+        onViewWillAppear()
     }
+    
+    func onViewWillAppear() {  }
     
     final override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag) {
