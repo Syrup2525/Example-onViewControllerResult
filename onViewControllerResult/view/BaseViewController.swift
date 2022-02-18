@@ -26,7 +26,7 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+    final override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag) {
             completion?()
             
@@ -36,13 +36,13 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
+    final func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
         onViewControllorRequestCode = requestCode
         
         super.performSegue(withIdentifier: identifier, sender: sender)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    final override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
             let destinationViewController = segue.destination as? BaseViewController
         else {
@@ -56,16 +56,16 @@ class BaseViewController: UIViewController {
         destinationViewController.onViewControllorRequestCode = onViewControllorRequestCode
     }
     
-    func setResult(resultCode: ResultCode) {
+    final func setResult(resultCode: ResultCode) {
         onViewControllerResultCode = resultCode
     }
     
-    func setResult(resultCode: ResultCode, data: [String:Any]) {
+    final func setResult(resultCode: ResultCode, data: [String:Any]) {
         onViewControllerResultCode = resultCode
         onViewControllerResultData = data
     }
     
-    func getSender() -> [String:Any]? {
+    final func getSender() -> [String:Any]? {
         return senderData
     }
 }
