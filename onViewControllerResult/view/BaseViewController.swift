@@ -11,9 +11,7 @@ class BaseViewController: UIViewController {
     private var onViewControllorRequestCode: Int?
     private var onViewControllerResultCode: ResultCode?
     private var onViewControllerResultData: [String:Any]?
-    
     private var senderData: [String:Any]?
-    
     private var presentingViewControllerData: UIViewController!
     
     override func viewDidLoad() {
@@ -36,12 +34,6 @@ class BaseViewController: UIViewController {
         }
     }
     
-    final func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
-        onViewControllorRequestCode = requestCode
-        
-        super.performSegue(withIdentifier: identifier, sender: sender)
-    }
-    
     final override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
             let destinationViewController = segue.destination as? BaseViewController
@@ -54,6 +46,12 @@ class BaseViewController: UIViewController {
         
         // 목적지 viewController 에 현재 requestCode 삽입
         destinationViewController.onViewControllorRequestCode = onViewControllorRequestCode
+    }
+    
+    final func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
+        onViewControllorRequestCode = requestCode
+        
+        super.performSegue(withIdentifier: identifier, sender: sender)
     }
     
     final func setResult(resultCode: ResultCode) {
