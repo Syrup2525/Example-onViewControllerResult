@@ -8,11 +8,17 @@
 import UIKit
 
 class SecondViewController: BaseViewController {
+    @IBOutlet var lbTitle: UILabel!
     @IBOutlet var tfDataA: UITextField!
     @IBOutlet var tfDataB: UITextField!
     @IBOutlet var tfDataC: UITextField!
     
+    @IBOutlet var btRequestFourth: UIButton!
     @IBOutlet var btBack: UIButton!
+    
+    private let REQUEST_FOURTH_VIEW_CONTROLLER = 20000
+    
+    private let FOURTH_SEGUE = "FourthSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,12 @@ class SecondViewController: BaseViewController {
     }
     
     private func initLayout() {
+        lbTitle.text = "This is Second View"
+        
+        btRequestFourth.addAction(for: .touchUpInside) { _ in
+            self.performSegue(withIdentifier: self.FOURTH_SEGUE, sender: nil, requestCode: self.REQUEST_FOURTH_VIEW_CONTROLLER)
+        }
+        
         btBack.addAction(for: .touchUpInside) { _ in
             var exampleObject = ExampleObject()
             exampleObject.a = self.tfDataA.text
@@ -49,4 +61,20 @@ class SecondViewController: BaseViewController {
         tfDataB.text = exampleObject.b
         tfDataC.text = exampleObject.c
     }
+}
+
+extension SecondViewController: OnViewControllerResult {
+    func onViewControllerResult(requestCode: Int?, resultCode: ResultCode?, data: [String : Any]?) {
+        if resultCode == .RESULT_OK {
+            switch requestCode {
+            case REQUEST_FOURTH_VIEW_CONTROLLER:
+                lbTitle.text = "Result FOURTH_VIEW"
+                break
+                
+            default:
+                break
+            }
+        }
+    }
+    
 }

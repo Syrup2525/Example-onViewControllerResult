@@ -9,6 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     private var onViewControllorRequestCode: Int?
+    private var onViewControllerReverseRequestCode: Int?
     private var onViewControllerResultCode: ResultCode?
     private var onViewControllerResultData: [String:Any]?
     private var senderData: [String:Any]?
@@ -33,9 +34,15 @@ class BaseViewController: UIViewController {
             completion?()
             
             if let viewController = self.presentingViewControllerData as? OnViewControllerResult {
-                viewController.onViewControllerResult(requestCode: self.onViewControllorRequestCode, resultCode: self.onViewControllerResultCode, data: self.onViewControllerResultData)
+                viewController.onViewControllerResult(requestCode: self.onViewControllerReverseRequestCode, resultCode: self.onViewControllerResultCode, data: self.onViewControllerResultData)
             }
         }
+    }
+    
+    final func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
+        onViewControllorRequestCode = requestCode
+        
+        super.performSegue(withIdentifier: identifier, sender: sender)
     }
     
     final override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,13 +56,7 @@ class BaseViewController: UIViewController {
         destinationViewController.senderData = sender as? [String:Any]
         
         // 목적지 viewController 에 현재 requestCode 삽입
-        destinationViewController.onViewControllorRequestCode = onViewControllorRequestCode
-    }
-    
-    final func performSegue(withIdentifier identifier: String, sender: Any?, requestCode: Int) {
-        onViewControllorRequestCode = requestCode
-        
-        super.performSegue(withIdentifier: identifier, sender: sender)
+        destinationViewController.onViewControllerReverseRequestCode = onViewControllorRequestCode
     }
     
     final func setResult(resultCode: ResultCode) {

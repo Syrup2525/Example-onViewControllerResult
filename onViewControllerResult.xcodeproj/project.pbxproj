@@ -20,6 +20,7 @@
 		3940A56727BC9D31000A4C30 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940A56627BC9D31000A4C30 /* SecondViewController.swift */; };
 		3940A56927BC9D70000A4C30 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940A56827BC9D70000A4C30 /* ThirdViewController.swift */; };
 		3940A56C27BC9F21000A4C30 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940A56B27BC9F21000A4C30 /* Extension.swift */; };
+		397BEBEA27C88D6D0093E790 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BEBE927C88D6D0093E790 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3940A56627BC9D31000A4C30 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3940A56827BC9D70000A4C30 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		3940A56B27BC9F21000A4C30 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		397BEBE927C88D6D0093E790 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				3911117A27BC9487004A7347 /* FirstViewController.swift */,
 				3940A56627BC9D31000A4C30 /* SecondViewController.swift */,
 				3940A56827BC9D70000A4C30 /* ThirdViewController.swift */,
+				397BEBE927C88D6D0093E790 /* FourthViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				3940A56727BC9D31000A4C30 /* SecondViewController.swift in Sources */,
 				3940A56927BC9D70000A4C30 /* ThirdViewController.swift in Sources */,
+				397BEBEA27C88D6D0093E790 /* FourthViewController.swift in Sources */,
 				391111AB27BC9548004A7347 /* BaseViewController.swift in Sources */,
 				3940A56C27BC9F21000A4C30 /* Extension.swift in Sources */,
 				3911117B27BC9487004A7347 /* FirstViewController.swift in Sources */,
